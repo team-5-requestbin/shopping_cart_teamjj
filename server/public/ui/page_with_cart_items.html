@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Shop!</title>
+  <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>The Shop!</h1>
+      <div class="cart">
+        <h2>Your Cart</h2>
+        <table class="cart-items">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Amazon Kindle E-reader</td>
+              <td>2</td>
+              <td>$79.99</td>
+            </tr>
+            <tr>
+              <td>Apple 10.5-Inch iPad Pro</td>
+              <td>1</td>
+              <td>$649.99</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="total">Total: $729.98</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="checkout-button">
+          <button class="checkout">Checkout</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="product-listing">
+        <h2>Products</h2>
+        <ul class="product-list">
+          <li class="product">
+            <div class="product-details">
+              <h3>Amazon Kindle E-reader</h3>
+              <p class="price">$79.99</p>
+              <p class="quantity">5 left in stock</p>
+              <div class="actions product-actions">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="edit">Edit</button>
+              </div>
+              <button class="delete-button"><span>X</span></button>
+            </div>
+          </li>
+
+          <li class="product">
+            <div class="product-details">
+              <h3>Apple 10.5-Inch iPad Pro</h3>
+              <p class="price">$649.99</p>
+              <p class="quantity">2 left in stock</p>
+              <div class="actions product-actions">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="edit">Edit</button>
+              </div>
+              <button class="delete-button"><span>X</span></button>
+            </div>
+          </li>
+
+          <li class="product">
+            <div class="product-details">
+              <h3>Yamaha Portable Keyboard</h3>
+              <p class="price">$155.99</p>
+              <p class="quantity">0 left in stock</p>
+              <div class="actions product-actions">
+                <button class="add-to-cart" disabled>Add to Cart</button>
+                <button class="edit">Edit</button>
+              </div>
+              <button class="delete-button"><span>X</span></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <p>
+        <button className="add-product-button">Add A Product</button>
+      </p>
+    </main>
+  </div>
+</body>
+</html>
