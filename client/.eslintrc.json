@@ -1,0 +1,13 @@
+{
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": [],
+  "parserOptions": {
+    "ecmaVersion": 2022, // configures ESLint to use ECMAScript 2022 standards for parsing your JavaScript code.
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true, // enable all ECMAScript 6 features except for modules (this automatically sets the ecmaVersion parser option to 6).
+    "browser": true, // access browser global variables.
+    "node": true // Node.js global variables and Node.js scoping.
+  }
+}
