@@ -1,5 +1,5 @@
-import { Schema as _Schema, model } from "mongoose";
-const Schema = _Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const { ObjectId } = Schema.Types;
 
@@ -25,6 +25,6 @@ const CartItemSchema = new Schema(
   { timestamps: true }
 );
 
-const CartItem = model("cartItem", CartItemSchema);
+const CartItem = mongoose.model("cartItem", CartItemSchema);
 
-export default CartItem;
+module.exports = CartItem;

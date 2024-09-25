@@ -1,20 +1,19 @@
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import apiRoutes from "./routes/api.js";
-import uiRoutes from "./routes/ui.js";
-import "dotenv/config";
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const apiRoutes = require("./routes/api");
+const uiRoutes = require("./routes/ui");
+require("dotenv").config();
 
 const app = express();
 
 const port = process.env.PORT || 5001;
 
 mongoose
-  // the 3xMongoose options are deprecated now so I commented them out Jesse9/21
   .connect(process.env.DB, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-    // useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
   })
   .then(() => console.log(`Database connected successfully`))
   .catch((err) => console.log(err));
@@ -31,7 +30,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 app.use(bodyParser.json());
 

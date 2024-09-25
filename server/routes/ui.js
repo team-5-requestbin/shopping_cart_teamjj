@@ -1,7 +1,6 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
-
-import path from "path";
+const path = require("path");
 
 router.get("/", (req, res, next) => {
   console.log("in ui");
@@ -23,4 +22,4 @@ router.get("/page_without_cart_items", (req, res, next) => {
   );
 });
 
-export default router;
+module.exports = router;

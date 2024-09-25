@@ -87,11 +87,10 @@
 
 // module.exports = router;
 
-import express from "express";
+const express = require("express");
 const router = express.Router();
-
-import Product from "../models/product.js";
-import CartItem from "../models/cartItem.js";
+const Product = require("../models/product");
+const CartItem = require("../models/cartItem");
 
 router.get("/products", (req, res, next) => {
   Product.find({})
@@ -197,4 +196,4 @@ router.get("/cart", (req, res, next) => {
     .catch(next);
 });
 
-export default router;
+module.exports = router;
