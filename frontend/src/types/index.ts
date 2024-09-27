@@ -20,3 +20,4 @@ export type Product = z.infer<typeof productSchema>;
 export type ProductAndItem = z.infer<typeof productAndItemSchema>;
 
 export type NewProduct = Pick<Product, "title" | "price" | "quantity">;
+export type EditedProduct = NewProduct & { _id: string };

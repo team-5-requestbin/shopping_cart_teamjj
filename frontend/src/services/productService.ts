@@ -4,6 +4,7 @@ import {
   productsSchema,
   Product,
   NewProduct,
+  EditedProduct,
   ProductAndItem,
   productAndItemSchema,
 } from "../types";
@@ -39,8 +40,12 @@ const addProduct = async (rawProduct: NewProduct) => {
   return productSchema.parse(data);
 };
 
-const updateProduct = async (updatedProduct: NewProduct) => {
-  const { data } = await axios.put<Product>(`BASE_URL`, { ...updatedProduct });
+const editProduct = async (editedProduct: EditedProduct) => {
+  const { data } = await axios.put<Product>(
+    `${BASE_URL}/products/${editedProduct._id}`,
+    { ...editedProduct }
+  );
+
   return productSchema.parse(data);
 };
 
@@ -65,7 +70,7 @@ const resetCart = async () => {
 export default {
   getProducts,
   addProduct,
-  updateProduct,
+  editProduct,
   deleteProduct,
   getCart,
   resetCart,
